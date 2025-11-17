@@ -26,10 +26,15 @@ public abstract class Unit : MonoBehaviour,
 
     private void Start()
     {
+        if (MainManager.Instance != null)
+        {
 
+            SetColor(MainManager.Instance.TeamColor);
+        }
     }
 
-    void SetColor(Color c)
+
+void SetColor(Color c)
     {
         var colorHandler = GetComponentInChildren<ColorHandler>();
         if (colorHandler != null)
@@ -94,4 +99,5 @@ public abstract class Unit : MonoBehaviour,
     {
         
     }
+
 }
